@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saffron Table — Fine Dining</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+      <span class="logo-text">Saffron<em>Table</em></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Est. 2018 · Fine Indian Cuisine</p>
+      <h1>Where Every Meal<br/><em>Tells a Story</em></h1>
+      <p class="hero-desc">Handcrafted dishes made with seasonal ingredients and age-old recipes, served in a warm, welcoming ambiance.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="#contact" class="btn btn-outline">Reserve a Table</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><i class="fa-solid fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-img">
+        <div class="img-frame">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant interior"/>
+        </div>
+        <div class="about-badge"><span>15+</span>Years of Craft</div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Our Story</p>
+        <h2>A Legacy of Flavour &amp; Warmth</h2>
+        <p>Nestled in the heart of the city, Saffron Table was born from a passion to revive authentic regional recipes passed down through generations. Our chefs source local, seasonal produce to create dishes that are both rooted in tradition and alive with creativity.</p>
+        <p>Every plate is an invitation — to slow down, savour, and share.</p>
+        <div class="about-stats">
+          <div class="stat"><strong>50+</strong><span>Menu Items</span></div>
+          <div class="stat"><strong>200+</strong><span>Happy Guests/Day</span></div>
+          <div class="stat"><strong>12</strong><span>Expert Chefs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <p class="section-label center">Our Menu</p>
+      <h2 class="center">Crafted With Care</h2>
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="veg">🌿 Veg</button>
+        <button class="filter-btn" data-filter="nonveg">🍗 Non-Veg</button>
+        <button class="filter-btn" data-filter="drinks">🥤 Drinks</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+
+        <div class="menu-card" data-category="veg">
+          <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAH7wt5-pJ2QkblR3PC5NO7uWxa5lhaq2LWw&s" alt="Paneer Tikka"/></div>
+          <div class="card-info">
+            <span class="tag veg-tag">Veg</span>
+            <h3>Pizza</h3>
+            <p>Veg Pizza with fully cheese</p>
+            <div class="card-footer"><span class="price">₹320</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="nonveg">
+          <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmgYVi2uIJU5_WaCy45wfkrGxpUkFZ65osjA&s" alt="Butter Chicken"/></div>
+          <div class="card-info">
+            <span class="tag nonveg-tag">Non-Veg</span>
+            <h3>Butter Chicken</h3>
+            <p>Slow-cooked in tomato cream sauce</p>
+            <div class="card-footer"><span class="price">₹480</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="veg">
+          <div class="card-img"><img src="https://www.sharmispassions.com/wp-content/uploads/2012/05/dal-makhani7.jpg" alt="Dal Makhani"/></div>
+          <div class="card-info">
+            <span class="tag veg-tag">Veg</span>
+            <h3>Dal Makhani</h3>
+            <p>Black lentils simmered overnight</p>
+            <div class="card-footer"><span class="price">₹280</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="nonveg">
+          <div class="card-img"><img src="https://veenaazmanov.com/wp-content/uploads/2019/07/Biryani-One-Pot-Chicken-Biryani5.jpg" alt="Chicken Biryani"/></div>
+          <div class="card-info">
+            <span class="tag nonveg-tag">Non-Veg</span>
+            <h3>Chicken Biryani</h3>
+            <p>Dum-cooked with whole spices & saffron</p>
+            <div class="card-footer"><span class="price">₹550</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+          <div class="card-img"><img src="https://lentillovingfamily.com/wp-content/uploads/2025/05/mango-lassi-2.jpg" alt="Mango Lassi"/></div>
+          <div class="card-info">
+            <span class="tag drinks-tag">Drink</span>
+            <h3>Mango Lassi</h3>
+            <p>Thick yogurt blended with Alphonso mango</p>
+            <div class="card-footer"><span class="price">₹150</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="veg">
+          <div class="card-img"><img src="https://img.freepik.com/free-psd/authentic-indian-thali-platter-with-assorted-vegetarian-dishes_84443-64972.jpg?semt=ais_hybrid&w=740&q=80" alt="Veg Thali"/></div>
+          <div class="card-info">
+            <span class="tag veg-tag">Veg</span>
+            <h3>Veg Thali</h3>
+            <p>Complete meal with 8 seasonal dishes</p>
+            <div class="card-footer"><span class="price">₹420</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="drinks">
+          <div class="card-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" alt="Cold Coffee"/></div>
+          <div class="card-info">
+            <span class="tag drinks-tag">Drink</span>
+            <h3>Cold Coffee</h3>
+            <p>House blend with cold milk & cream</p>
+            <div class="card-footer"><span class="price">₹180</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="veg">
+          <div class="card-img"><img src="https://hips.hearstapps.com/hmg-prod/images/chicken-burgers-index-667b185b5f528.jpg?crop=0.500xw:1.00xh;0.282xw,0&resize=1200:*" alt="Mutton Rogan Josh"/></div>
+          <div class="card-info">
+            <span class="tag nonveg-tag">Veg</span>
+            <h3>Burger</h3>
+            <p>Fully loaded pizza with aloo tikki </p>
+            <div class="card-footer"><span class="price">₹620</span><button class="add-btn">+ Add</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="section-label center">Gallery</p>
+      <h2 class="center">A Feast for the Eyes</h2>
+      <div class="gallery-grid">
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="dish"/><div class="g-overlay"><i class="fa-solid fa-expand"></i></div></div>
+        <div class="g-item tall"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80" alt="restaurant"/><div class="g-overlay"><i class="fa-solid fa-expand"></i></div></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="pizza"/><div class="g-overlay"><i class="fa-solid fa-expand"></i></div></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500&q=80" alt="salad"/><div class="g-overlay"><i class="fa-solid fa-expand"></i></div></div>
+        <div class="g-item wide"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="interior"/><div class="g-overlay"><i class="fa-solid fa-expand"></i></div></div>
+        <div class="g-item"><img src="https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?w=500&q=80" alt="dessert"/><div class="g-overlay"><i class="fa-solid fa-expand"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <p class="section-label center">Why Choose Us</p>
+      <h2 class="center">The Saffron Promise</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="svc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Hot meals delivered to your door within 30 minutes, guaranteed.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Fresh Ingredients</h3>
+          <p>Farm-to-table produce sourced daily from local organic farms.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fa-solid fa-award"></i></div>
+          <h3>Award-Winning Chefs</h3>
+          <p>Our chefs bring Michelin-trained expertise to every dish.</p>
+        </div>
+        <div class="service-card">
+          <div class="svc-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Open All Week</h3>
+          <p>We're open 7 days a week, noon to midnight — always here for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-info">
+        <p class="section-label">Get In Touch</p>
+        <h2>Reserve Your Table</h2>
+        <p>Book a table or send us a message. We'd love to hear from you.</p>
+        <ul class="contact-details">
+          <li><i class="fa-solid fa-location-dot"></i> 12, Connaught Place, New Delhi</li>
+          <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+          <li><i class="fa-solid fa-envelope"></i> hello@saffrrontable.in</li>
+          <li><i class="fa-solid fa-clock"></i> Mon–Sun: 12:00 PM – 12:00 AM</li>
+        </ul>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Rahul Sharma" />
+            <span class="err" id="nameErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" />
+            <span class="err" id="emailErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="I'd like to book a table for..."></textarea>
+            <span class="err" id="msgErr"></span>
+          </div>
+          <button type="submit" class="btn btn-primary full-btn" id="submitBtn">
+            <span id="btnText">Send Message</span>
+            <i class="fa-solid fa-paper-plane" id="btnIcon"></i>
+          </button>
+          <div id="formMsg" class="form-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="logo-text">Saffron<em>Table</em></span>
+      <p>© 2025 SaffronTable. Crafted with <i class="fa-solid fa-heart"></i> and spice.</p>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
