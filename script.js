@@ -1,17 +1,14 @@
-// ===== EMAILJS INIT =====
-// Replace with your own EmailJS public key, service ID, and template ID
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("BivUoaD2ebVKctgTB");
 
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_SERVICE_ID  = "service_oui3gpi";
+const EMAILJS_TEMPLATE_ID = "template_frq8ffp";
 
-// ===== NAVBAR: STICKY + SCROLL =====
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 60);
 });
 
-// ===== HAMBURGER MENU =====
+
 const hamburger = document.getElementById("hamburger");
 const navLinks  = document.getElementById("navLinks");
 
@@ -20,7 +17,6 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-// Close menu when a link is clicked
 navLinks.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     hamburger.classList.remove("open");
@@ -28,7 +24,6 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-// ===== MENU FILTER =====
 const filterBtns = document.querySelectorAll(".filter-btn");
 const menuCards  = document.querySelectorAll(".menu-card");
 
@@ -51,7 +46,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-// ===== ADD BUTTON FEEDBACK =====
 document.querySelectorAll(".add-btn").forEach(btn => {
   btn.addEventListener("click", function () {
     const original = this.textContent;
@@ -66,7 +60,6 @@ document.querySelectorAll(".add-btn").forEach(btn => {
   });
 });
 
-// ===== CONTACT FORM VALIDATION + EMAILJS =====
 const form      = document.getElementById("contactForm");
 const nameInput = document.getElementById("name");
 const emailInput= document.getElementById("email");
@@ -81,7 +74,6 @@ const btnText   = document.getElementById("btnText");
 function validate() {
   let valid = true;
 
-  // Name
   if (!nameInput.value.trim()) {
     nameErr.textContent = "Please enter your name.";
     nameInput.classList.add("invalid");
@@ -91,7 +83,6 @@ function validate() {
     nameInput.classList.remove("invalid");
   }
 
-  // Email
   const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailInput.value.trim()) {
     emailErr.textContent = "Please enter your email.";
@@ -106,7 +97,6 @@ function validate() {
     emailInput.classList.remove("invalid");
   }
 
-  // Message
   if (!msgInput.value.trim()) {
     msgErr.textContent = "Please write a message.";
     msgInput.classList.add("invalid");
@@ -139,7 +129,7 @@ form.addEventListener("submit", async (e) => {
     form.reset();
   } catch (err) {
     console.error("EmailJS error:", err);
-    // For demo purposes (no real EmailJS key), still show a friendly message
+
     showFeedback("✓ Message received! (EmailJS not configured – check script.js to connect your account.)", "success");
     form.reset();
   } finally {
@@ -154,7 +144,6 @@ function showFeedback(msg, type) {
   setTimeout(() => { formMsg.className = "form-feedback"; }, 5000);
 }
 
-// ===== SCROLL REVEAL (lightweight) =====
 const revealEls = document.querySelectorAll(
   ".menu-card, .service-card, .about-text, .about-img, .contact-info, .contact-form-wrap, .g-item"
 );
@@ -176,7 +165,6 @@ revealEls.forEach(el => {
   observer.observe(el);
 });
 
-// ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY + 100;
